@@ -56,8 +56,8 @@
         irq-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>; //P0.02を指定(MOTION)
         cpi = <600>;
         //swap-xy;
-        invert-x; //COROPIT版ではコメントアウトを外す
-        invert-y; //COROPIT版ではコメントアウトを外す
+        //invert-x; //COROPIT版ではコメントアウトを外す(HWレジスタが無視するため実質無効)
+        //invert-y; //COROPIT版ではコメントアウトを外す(HWレジスタが無視するため実質無効)
         evt-type = <INPUT_EV_REL>;
         x-input-code = <INPUT_REL_X>;
         y-input-code = <INPUT_REL_Y>;
@@ -70,7 +70,7 @@
     status = "okay";
     device = <&trackball_central>;
     // 低背基盤の場合: <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>を追加
-    input-processors = <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>, <&mouse_runtime_input_processor>;
+    input-processors = <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>, <&mouse_runtime_input_processor>, <&zip_temp_layer 5 500>;
 
     scroller {
         layers = <6>;
