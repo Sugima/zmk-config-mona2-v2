@@ -69,7 +69,8 @@
 &trackball_central_listener {
     status = "okay";
     device = <&trackball_central>;
-    input-processors = <&mouse_runtime_input_processor>;
+    // 低背基盤の場合: <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>を追加
+    input-processors = <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>, <&mouse_runtime_input_processor>;
 
     scroller {
         layers = <6>;
