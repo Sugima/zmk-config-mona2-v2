@@ -2,7 +2,6 @@
 #include <dt-bindings/zmk/input_transform.h>
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 #include <behaviors.dtsi>
-#include <behaviors/runtime-sensor-rotate.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
@@ -88,12 +87,20 @@
             tapping-term-ms = <200>;
         };
 
-        rsr_encoder: rsr_encoder {
-            compatible = "zmk,behavior-runtime-sensor-rotate";
+        scroll_up_down: mouse_wheel_up_down {
+            compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
+            bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
+
             tap-ms = <20>;
-            cw-binding = <&msc SCRL_DOWN>;
-            ccw-binding = <&msc SCRL_UP>;
+        };
+
+        scroll_right_left: mouse_wheel_right_left {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings = <&msc SCRL_LEFT>, <&msc SCRL_RIGHT>;
+
+            tap-ms = <20>;
         };
     };
 
@@ -108,7 +115,7 @@
 &kp LEFT_ALT        &lt 3 LC(Z)  &kp LS(LA(LC(LGUI)))  &kp LEFT_GUI  &lt 2 LANG2  &mt LEFT_SHIFT SPACE    &kp ENTER        &lt 1 LANG1                             &lt 4 ESCAPE
             >;
 
-            sensor-bindings = <&rsr_encoder>;
+            sensor-bindings = <&scroll_up_down>;
         };
 
         NAVI {
@@ -119,7 +126,7 @@
 &trans            &trans          &trans           &trans             &trans             &trans    &trans                   &trans                                              &trans
             >;
 
-            sensor-bindings = <&rsr_encoder>;
+            sensor-bindings = <&scroll_right_left>;
         };
 
         NUM {
@@ -130,7 +137,7 @@
 &trans            &trans           &trans        &trans                &trans                 &trans    &trans               &trans                                                  &trans
             >;
 
-            sensor-bindings = <&rsr_encoder>;
+            sensor-bindings = <&scroll_up_down>;
         };
 
         FUNCTION {
@@ -141,7 +148,7 @@
 &trans  &trans  &trans  &trans  &trans  &trans         &trans         &trans                           &trans
             >;
 
-            sensor-bindings = <&rsr_encoder>;
+            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
         };
 
         MISC {
@@ -152,7 +159,7 @@
 &trans  &trans  &trans        &trans                &trans            &trans        &trans                    &trans                                            &trans
             >;
 
-            sensor-bindings = <&rsr_encoder>;
+            sensor-bindings = <&scroll_up_down>;
         };
 
         MOUSE {
@@ -163,7 +170,7 @@
 &trans  &trans  &trans  &trans  &mkp_mb1_exit  &trans     &trans            &trans                          &trans
             >;
 
-            sensor-bindings = <&rsr_encoder>;
+            sensor-bindings = <&scroll_up_down>;
         };
 
         SCROLL {
@@ -174,7 +181,7 @@
 &trans  &trans            &trans                          &trans                 &trans  &trans       &trans                &trans                          &trans
             >;
 
-            sensor-bindings = <&rsr_encoder>;
+            sensor-bindings = <&scroll_up_down>;
         };
     };
 };
