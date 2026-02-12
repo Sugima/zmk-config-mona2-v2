@@ -70,7 +70,7 @@
     status = "okay";
     device = <&trackball_central>;
     // 低背基盤の場合: <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>を追加
-    input-processors = <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>, <&mouse_runtime_input_processor>, <&zip_temp_layer 5 500>;
+    input-processors = <&mouse_runtime_input_processor>, <&zip_temp_layer 5 500>;
 
     scroller {
         layers = <6>;
