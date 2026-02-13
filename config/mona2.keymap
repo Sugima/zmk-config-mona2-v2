@@ -9,6 +9,7 @@
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 100
 #define MOUSE 5
 #define SCROLL 6
+#define GESTURE 7
 
 &mt {
     flavor = "balanced";
@@ -21,6 +22,19 @@
 };
 
 / {
+    zip_keybind_gesture: zip_keybind_gesture {
+        compatible = "zmk,input-processor-keybind";
+        #input-processor-cells = <0>;
+        bindings = <&kp LG(RIGHT_BRACKET)>,   /* 右 = 進む Cmd+] */
+                   <&kp LG(LEFT_BRACKET)>,    /* 左 = 戻る Cmd+[ */
+                   <&kp LG(W)>,               /* 下 = タブ閉じる Cmd+W */
+                   <&kp LG(T)>;               /* 上 = 新規タブ Cmd+T */
+        tick = <30>;
+        tap-ms = <10>;
+        mode = <1>;
+        track_remainders;
+    };
+
     combos {
         compatible = "zmk,combos";
 
@@ -165,7 +179,7 @@
         MOUSE {
             bindings = <
 &trans  &trans  &trans  &trans  &trans                                       &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans                   &trans              &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &mo GESTURE  &trans              &trans              &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans    &mkp_mb2_exit   &trans             &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &mkp_mb1_exit  &trans     &trans            &trans                          &trans
             >;
@@ -183,5 +197,23 @@
 
             sensor-bindings = <&scroll_up_down>;
         };
+
+        GESTURE {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans                                    &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans              &trans                &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans       &trans               &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans       &trans               &trans                          &trans
+            >;
+
+            sensor-bindings = <&scroll_up_down>;
+        };
+    };
+};
+
+&trackball_central_listener {
+    gesture {
+        layers = <GESTURE>;
+        input-processors = <&zip_keybind_gesture>, <&zip_xy_scaler 1 100>;
     };
 };
