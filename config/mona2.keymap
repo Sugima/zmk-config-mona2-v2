@@ -181,7 +181,7 @@
 &trans  &trans  &trans        &trans                &trans            &trans        &trans      &trans                                            &trans
             >;
 
-            sensor-bindings = <&scroll_up_down>;
+            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
         };
 
         MOUSE {
@@ -197,10 +197,10 @@
 
         SCROLL {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                    &kp LG(PLUS)  &kp LC(LEFT_ARROW)        &kp LC(UP_ARROW)  &kp LC(RIGHT)              &kp LG(PLUS)
-&trans  &trans  &trans  &trans  &trans            &trans  &trans        &kp LG(LS(LEFT_BRACKET))  &trans            &kp LG(LS(RIGHT_BRACKET))  &kp LG(MINUS)
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans        &trans                    &trans            &trans                     &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans                                                                               &trans
+&trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans                          &trans
             >;
 
             sensor-bindings = <&scroll_up_down>;
@@ -208,10 +208,10 @@
 
         GESTURE {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans                          &trans
+&trans  &trans  &trans  &trans  &trans                    &trans  &kp LC(LEFT)              &kp LC(UP_ARROW)  &kp LC(RIGHT)              &kp LG(PLUS)
+&trans  &trans  &trans  &trans  &trans            &trans  &trans  &kp LG(LS(LEFT_BRACKET))  &trans            &kp LG(LS(RIGHT_BRACKET))  &kp LG(MINUS)
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &kp LG(NUMBER_1)          &kp LG(NUMBER_2)  &trans                     &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans                                                                         &trans
             >;
 
             sensor-bindings = <&scroll_up_down>;
