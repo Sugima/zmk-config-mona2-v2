@@ -209,7 +209,7 @@
         GESTURE {
             bindings = <
 &trans  &trans  &trans  &trans  &trans                    &trans  &kp LC(LEFT)              &kp LC(UP_ARROW)  &kp LC(RIGHT)              &kp LG(PLUS)
-&trans  &trans  &trans  &trans  &trans            &trans  &trans  &kp LG(LS(LEFT_BRACKET))  &trans            &kp LG(LS(RIGHT_BRACKET))  &kp LG(MINUS)
+&trans  &trans  &trans  &trans  &trans            &trans  &trans  &kp LG(LS(LEFT_BRACKET))  &kp LG(TAB)       &kp LG(LS(RIGHT_BRACKET))  &kp LG(MINUS)
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &kp LG(NUMBER_1)          &kp LG(NUMBER_2)  &kp LG(NUMBER_3)           &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans                                                                         &trans
             >;
