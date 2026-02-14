@@ -222,6 +222,7 @@
 &trackball_central_listener {
     gesture {
         layers = <GESTURE>;
-        input-processors = <&zip_keybind_gesture>, <&zip_xy_scaler 1 10000>;
+        process-next;
+        input-processors = <&zip_keybind_gesture>;
     };
 };
