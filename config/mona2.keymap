@@ -26,10 +26,10 @@
         compatible = "zmk,input-processor-keybind";
         #input-processor-cells = <0>;
         bindings =
-            <&kp LG(RIGHT_BRACKET)>, /* 右 = 進む Cmd+] */
-            <&kp LG(LEFT_BRACKET)>, /* 左 = 戻る Cmd+[ */
-            <&kp LG(W)>,            /* 下 = タブ閉じる Cmd+W */
-            <&kp LG(T)>;            /* 上 = 新規タブ Cmd+T */
+            <&kp LG(RIGHT_BRACKET)>,
+            <&kp LG(LEFT_BRACKET)>,
+            <&kp LG(W)>,
+            <&kp LG(T)>;
         tick = <30>;
         tap-ms = <10>;
         mode = <1>;
