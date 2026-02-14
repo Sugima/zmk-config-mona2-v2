@@ -30,6 +30,7 @@
             <&kp LG(LEFT_BRACKET)>,
             <&kp LG(W)>,
             <&kp LG(T)>;
+
         tick = <30>;
         tap-ms = <10>;
         mode = <1>;
@@ -196,10 +197,10 @@
 
         SCROLL {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                    &kp LG(PLUS)  &kp LC(LEFT_ARROW)    &kp LC(UP_ARROW)  &kp LC(RIGHT)          &kp LG(PLUS)
-&trans  &trans  &trans  &trans  &trans            &trans  &trans        &kp LG(LEFT_BRACKET)  &trans            &kp LG(RIGHT_BRACKET)  &kp LG(MINUS)
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans        &trans                &trans            &trans                 &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans                                                                       &trans
+&trans  &trans  &trans  &trans  &trans                    &kp LG(PLUS)  &kp LC(LEFT_ARROW)        &kp LC(UP_ARROW)  &kp LC(RIGHT)              &kp LG(PLUS)
+&trans  &trans  &trans  &trans  &trans            &trans  &trans        &kp LG(LS(LEFT_BRACKET))  &trans            &kp LG(LS(RIGHT_BRACKET))  &kp LG(MINUS)
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans        &trans                    &trans            &trans                     &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans                                                                               &trans
             >;
 
             sensor-bindings = <&scroll_up_down>;
