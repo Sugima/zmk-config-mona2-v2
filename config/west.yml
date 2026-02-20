@@ -4,8 +4,10 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: sayu-hub
       url-base: https://github.com/sayu-hub
-    - name: badjeff    # <-- PMW3610
+    - name: badjeff    # <-- PMW3610 (旧)
       url-base: https://github.com/badjeff
+    - name: kumamuk-git  # <-- PMW3610 (パワーマネジメント対応フォーク)
+      url-base: https://github.com/kumamuk-git
     # - name: sekigon-gonnoc  # <-- PAW3222
     #   url-base: https://github.com/sekigon-gonnoc
     - name: caksoylar  # <-- RGB LED
@@ -18,8 +20,8 @@ manifest:
       revision: v0.3.0
       import: app/west.yml
     - name: zmk-pmw3610-driver
-      remote: badjeff
-      revision: zmk-0.3
+      remote: kumamuk-git
+      revision: main
     # - name: zmk-driver-paw3222
     #   remote: sekigon-gonnoc
     #   revision: main
