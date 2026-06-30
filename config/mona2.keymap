@@ -31,7 +31,7 @@
             <&kp LG(W)>,
             <&kp LG(T)>;
 
-        tick = <30>;
+        tick = <60>;
         tap-ms = <10>;
         mode = <1>;
         track_remainders;
